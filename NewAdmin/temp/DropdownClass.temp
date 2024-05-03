@@ -1,0 +1,31 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Linq;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Database;
+namespace DMS
+{
+public partial class [Titledd] : System.Web.UI.Page
+{
+    ERPEntities DB = new ERPEntities();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+	 if (!IsPostBack)
+        {
+			BindData();
+        }
+    }
+	public void BindData()
+    {
+	[ServerContentSenddd]
+	}
+	
+	
+}
+}

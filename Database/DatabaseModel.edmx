@@ -1,0 +1,2507 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DatabaseModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="tbl_AddCustomer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_AddLeaveEntitlement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="LeaveType" Type="int" />
+          <Property Name="MuEmployee" Type="bit" />
+          <Property Name="LeavePeriod" Type="bit" />
+          <Property Name="Entitlement" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CeaatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_AddPerformanceTracker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TrackerName" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_AssignLeave">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="LeaveType" Type="int" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_AttendanceFileUpload">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AttendanceFile" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Configure">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PunchingInOut" Type="bit" />
+          <Property Name="AttendanceRecords" Type="bit" />
+          <Property Name="Subordinates" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ContactDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AddressStree1" Type="varchar" MaxLength="50" />
+          <Property Name="AddressStreet2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="StateProvince" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="int" />
+          <Property Name="Country" Type="int" />
+          <Property Name="HomeTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="WorkTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="WorkMail" Type="varchar" MaxLength="50" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DefineJobApplicationHeaderAndFooter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Header" Type="varchar" MaxLength="50" />
+          <Property Name="Footer" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DefineLeavePeriod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StartMonth" Type="int" />
+          <Property Name="StartDate" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DefineWorkWeek">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Country" Type="int" />
+          <Property Name="Monday" Type="int" />
+          <Property Name="Tuesday" Type="int" />
+          <Property Name="Wendnesday" Type="int" />
+          <Property Name="Thursday" Type="int" />
+          <Property Name="Friday" Type="int" />
+          <Property Name="Saturday" Type="int" />
+          <Property Name="Sunday" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Dependents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="RelationShip" Type="varchar" MaxLength="50" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DirectDeposit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Amount" Type="varchar" MaxLength="50" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="50" />
+          <Property Name="FinancialInstitute" Type="varchar" MaxLength="50" />
+          <Property Name="AccountType" Type="int" />
+          <Property Name="BranchLocation" Type="varchar" MaxLength="50" />
+          <Property Name="RountingNo" Type="varchar" MaxLength="50" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="int" />
+          <Property Name="Activated" Type="int" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DisplayAttendanceSummaryReportCriteria">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="JobTitle" Type="int" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="EmployeeStatus" Type="int" />
+          <Property Name="From" Type="date" />
+          <Property Name="To" Type="date" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DisplayEmployeeReportCriteria">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="ProjectName" Type="int" />
+          <Property Name="ActivityName" Type="int" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_DisplayProjectReportCriteria">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ProjectName" Type="int" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="TimeSheet" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_EmergencyContacts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="RelationShip" Type="varchar" MaxLength="50" />
+          <Property Name="HomeTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="WorkTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Immigration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Document" Type="varchar" MaxLength="50" />
+          <Property Name="Passport" Type="bit" />
+          <Property Name="Visa" Type="bit" />
+          <Property Name="Number" Type="varchar" MaxLength="50" />
+          <Property Name="EligibleStatus" Type="varchar" MaxLength="50" />
+          <Property Name="Issueddate" Type="datetime" />
+          <Property Name="IssuedBy" Type="datetime" />
+          <Property Name="ExpiryDate" Type="date" />
+          <Property Name="Cooment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_JobHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Job" Type="varchar" MaxLength="50" />
+          <Property Name="JoinDate" Type="datetime" />
+          <Property Name="ProbationEndDate" Type="datetime" />
+          <Property Name="DateOfPermanency" Type="datetime" />
+          <Property Name="JobTitle" Type="int" />
+          <Property Name="EmploymentStatus" Type="int" />
+          <Property Name="JobCategory" Type="int" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="Location" Type="int" />
+          <Property Name="EffectiveDate" Type="datetime" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_LeaveList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="Rejected" Type="bit" />
+          <Property Name="PendingApproval" Type="bit" />
+          <Property Name="Scheduled" Type="bit" />
+          <Property Name="Taken" Type="bit" />
+          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="PastEmployee" Type="bit" />
+          <Property Name="Location" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ListDefineKpi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="int" />
+          <Property Name="Department" Type="int" />
+          <Property Name="Indicator" Type="varchar" MaxLength="50" />
+          <Property Name="KIPGroup" Type="int" />
+          <Property Name="MinimumRating" Type="int" />
+          <Property Name="MaximumRating" Type="int" />
+          <Property Name="DefualtScal" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Membgerships">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Membership" Type="int" />
+          <Property Name="Currency" Type="int" />
+          <Property Name="SubscriptionPaidBy" Type="int" />
+          <Property Name="SubscriptionDate" Type="datetime" />
+          <Property Name="SubscriptionAmount" Type="varchar" MaxLength="50" />
+          <Property Name="SubsriptionRenewalDate" Type="datetime" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_PersonalDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddilName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="EmployeeID" Type="int" />
+          <Property Name="OtherId" Type="int" />
+          <Property Name="LicenceNumber" Type="varchar" MaxLength="50" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="Male" Type="bit" />
+          <Property Name="Female" Type="bit" />
+          <Property Name="MaritalStatus" Type="int" />
+          <Property Name="Nationality" Type="int" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_Qualifications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Company" Type="varchar" MaxLength="50" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="50" />
+          <Property Name="Todate" Type="datetime" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Level" Type="varchar" MaxLength="50" />
+          <Property Name="GPAScore" Type="varchar" MaxLength="50" />
+          <Property Name="Institute" Type="varchar" MaxLength="50" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="MajorSpecialization" Type="varchar" MaxLength="50" />
+          <Property Name="EndDate" Type="datetime" />
+          <Property Name="Year" Type="varchar" MaxLength="50" />
+          <Property Name="Skill" Type="int" />
+          <Property Name="YearOfExperiance" Type="varchar" MaxLength="50" />
+          <Property Name="Comment1" Type="varchar" MaxLength="50" />
+          <Property Name="Language" Type="int" />
+          <Property Name="Competency" Type="int" />
+          <Property Name="Fluency" Type="int" />
+          <Property Name="Comment2" Type="varchar" MaxLength="50" />
+          <Property Name="LicenseType" Type="int" />
+          <Property Name="LicenseNumber" Type="varchar" MaxLength="50" />
+          <Property Name="IssuedDate" Type="datetime" />
+          <Property Name="ExpiryDate" Type="datetime" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment3" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ReportTo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ReportingMethod" Type="int" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_SalaryHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PayGrade" Type="int" />
+          <Property Name="Currency" Type="int" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="AnnualBasicPayment" Type="bit" />
+          <Property Name="CarAllowance" Type="bit" />
+          <Property Name="CostOfLivingAllowance" Type="bit" />
+          <Property Name="EffectiveDate" Type="datetime" />
+          <Property Name="EffectiveDate1" Type="datetime" />
+          <Property Name="EffectiveDate2" Type="datetime" />
+          <Property Name="PentionFund" Type="bit" />
+          <Property Name="EPF" Type="bit" />
+          <Property Name="EffectiveDate3" Type="datetime" />
+          <Property Name="EffectiveDate4" Type="datetime" />
+          <Property Name="SelectFile" Type="varchar" MaxLength="50" />
+          <Property Name="Comment1" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_SaveAppraisalHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AppraisalDetail" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_SearchKpiGroup360">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GroupName" Type="varchar" MaxLength="50" />
+          <Property Name="Weightage" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_SearchPerformancReview360">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="StartDate" Type="date" />
+          <Property Name="EndDate" Type="date" />
+          <Property Name="DueDate" Type="date" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ShowLeaveCalendar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="Year" Type="int" />
+          <Property Name="Month" Type="int" />
+          <Property Name="EmploymentStatus" Type="int" />
+          <Property Name="PastEmployee" Type="varchar" MaxLength="50" />
+          <Property Name="Location" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewAttendanceDataExtract">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="ReportType" Type="int" />
+          <Property Name="ReportType1" Type="int" />
+          <Property Name="FromDate" Type="date" />
+          <Property Name="ToDate" Type="date" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewAttendanceRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewCandidates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FirstName" Type="varchar" MaxLength="50" />
+          <Property Name="MiddleName" Type="varchar" MaxLength="50" />
+          <Property Name="LastName" Type="varchar" MaxLength="50" />
+          <Property Name="AddressStreet1" Type="varchar" MaxLength="50" />
+          <Property Name="AddressStreet2" Type="varchar" MaxLength="50" />
+          <Property Name="City" Type="varchar" MaxLength="50" />
+          <Property Name="StatusProvince" Type="varchar" MaxLength="50" />
+          <Property Name="Zip" Type="varchar" MaxLength="50" />
+          <Property Name="Country" Type="int" />
+          <Property Name="HomeTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="Mobile" Type="varchar" MaxLength="50" />
+          <Property Name="WorkTelephone" Type="varchar" MaxLength="50" />
+          <Property Name="Email" Type="varchar" MaxLength="50" />
+          <Property Name="JobVacancy" Type="int" />
+          <Property Name="Resume" Type="varchar" MaxLength="50" />
+          <Property Name="KeyWord" Type="varchar" MaxLength="50" />
+          <Property Name="Comment" Type="varchar" MaxLength="50" />
+          <Property Name="DateOfApplication" Type="datetime" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewEmployee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LocalForeign" Type="int" />
+          <Property Name="Customer" Type="int" />
+          <Property Name="BatchNo" Type="varchar" MaxLength="50" />
+          <Property Name="Reference" Type="varchar" MaxLength="50" />
+          <Property Name="CRMActivity" Type="int" />
+          <Property Name="DateOfTransaction" Type="datetime" />
+          <Property Name="Currency" Type="int" />
+          <Property Name="ProjectNo" Type="varchar" MaxLength="50" />
+          <Property Name="Notes" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewEmployeeTimesheet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeName" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Acticated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewHolidayList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="Country" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewJobApplicationQuestionList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobVacancy" Type="int" />
+          <Property Name="QuestionGroup" Type="int" />
+          <Property Name="QuestionType" Type="int" />
+          <Property Name="QuestionName" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewJobVacancy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="JobTitle" Type="varchar" MaxLength="50" />
+          <Property Name="VacancyName" Type="varchar" MaxLength="50" />
+          <Property Name="HiringManager" Type="varchar" MaxLength="50" />
+          <Property Name="NumberOfPosition" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewLeaveBalanceReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Generate" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewLeaveEntitlements">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="LeaveType" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewLeaveNotifications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NoName" Type="varchar" MaxLength="50" />
+          <Property Name="SendOn" Type="varchar" MaxLength="50" />
+          <Property Name="LeaveNext" Type="int" />
+          <Property Name="MailSubject" Type="varchar" MaxLength="50" />
+          <Property Name="JobTitle" Type="int" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="Location" Type="int" />
+          <Property Name="JobTitle1" Type="int" />
+          <Property Name="SubUnit1" Type="int" />
+          <Property Name="Location1" Type="int" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="varchar" MaxLength="50" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewPackageList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Code" Type="int" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Company" Type="varchar" MaxLength="50" />
+          <Property Name="Cost" Type="varchar" MaxLength="50" />
+          <Property Name="Currency" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewProjects">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerName" Type="varchar" MaxLength="50" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="ProjectAdmin" Type="varchar" MaxLength="50" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewSessionList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="varchar" MaxLength="50" />
+          <Property Name="Course" Type="int" />
+          <Property Name="ScheduledDate" Type="datetime" />
+          <Property Name="DueDate" Type="datetime" />
+          <Property Name="DeliveryMethod" Type="int" />
+          <Property Name="DeliveryLocation" Type="varchar" MaxLength="50" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Description" Type="varchar" MaxLength="50" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="tbl_ViewTimesheetCsvExtract">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Employee" Type="varchar" MaxLength="50" />
+          <Property Name="Supervior" Type="int" />
+          <Property Name="EmploymentStatus" Type="int" />
+          <Property Name="SubUnit" Type="int" />
+          <Property Name="Customer" Type="int" />
+          <Property Name="Project" Type="int" />
+          <Property Name="Activity" Type="int" />
+          <Property Name="StartDate" Type="datetime" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="Saved" Type="bit" />
+          <Property Name="Submitted" Type="bit" />
+          <Property Name="Approved" Type="bit" />
+          <Property Name="Rejected" Type="bit" />
+          <Property Name="NotNull" Type="bit" />
+          <Property Name="JobTitle" Type="bit" />
+          <Property Name="Employment" Type="bit" />
+          <Property Name="JoinedDate" Type="bit" />
+          <Property Name="Location" Type="bit" />
+          <Property Name="Supervisor" Type="bit" />
+          <Property Name="CSV" Type="bit" />
+          <Property Name="Deleted" Type="bit" />
+          <Property Name="Activated" Type="bit" />
+          <Property Name="CreatedBy" Type="int" />
+          <Property Name="CreateDate" Type="datetime" />
+        </EntityType>
+        <EntityContainer Name="DatabaseModelStoreContainer">
+          <EntitySet Name="tbl_AddCustomer" EntityType="Self.tbl_AddCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AddLeaveEntitlement" EntityType="Self.tbl_AddLeaveEntitlement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AddPerformanceTracker" EntityType="Self.tbl_AddPerformanceTracker" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AssignLeave" EntityType="Self.tbl_AssignLeave" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_AttendanceFileUpload" EntityType="Self.tbl_AttendanceFileUpload" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Configure" EntityType="Self.tbl_Configure" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ContactDetails" EntityType="Self.tbl_ContactDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DefineJobApplicationHeaderAndFooter" EntityType="Self.tbl_DefineJobApplicationHeaderAndFooter" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DefineLeavePeriod" EntityType="Self.tbl_DefineLeavePeriod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DefineWorkWeek" EntityType="Self.tbl_DefineWorkWeek" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Dependents" EntityType="Self.tbl_Dependents" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DirectDeposit" EntityType="Self.tbl_DirectDeposit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DisplayAttendanceSummaryReportCriteria" EntityType="Self.tbl_DisplayAttendanceSummaryReportCriteria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DisplayEmployeeReportCriteria" EntityType="Self.tbl_DisplayEmployeeReportCriteria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_DisplayProjectReportCriteria" EntityType="Self.tbl_DisplayProjectReportCriteria" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_EmergencyContacts" EntityType="Self.tbl_EmergencyContacts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Immigration" EntityType="Self.tbl_Immigration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_JobHistory" EntityType="Self.tbl_JobHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_LeaveList" EntityType="Self.tbl_LeaveList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ListDefineKpi" EntityType="Self.tbl_ListDefineKpi" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Membgerships" EntityType="Self.tbl_Membgerships" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_PersonalDetails" EntityType="Self.tbl_PersonalDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_Qualifications" EntityType="Self.tbl_Qualifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ReportTo" EntityType="Self.tbl_ReportTo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SalaryHistory" EntityType="Self.tbl_SalaryHistory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SaveAppraisalHeader" EntityType="Self.tbl_SaveAppraisalHeader" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SearchKpiGroup360" EntityType="Self.tbl_SearchKpiGroup360" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_SearchPerformancReview360" EntityType="Self.tbl_SearchPerformancReview360" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ShowLeaveCalendar" EntityType="Self.tbl_ShowLeaveCalendar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewAttendanceDataExtract" EntityType="Self.tbl_ViewAttendanceDataExtract" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewAttendanceRecord" EntityType="Self.tbl_ViewAttendanceRecord" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewCandidates" EntityType="Self.tbl_ViewCandidates" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewEmployee" EntityType="Self.tbl_ViewEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewEmployeeTimesheet" EntityType="Self.tbl_ViewEmployeeTimesheet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewHolidayList" EntityType="Self.tbl_ViewHolidayList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewJobApplicationQuestionList" EntityType="Self.tbl_ViewJobApplicationQuestionList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewJobVacancy" EntityType="Self.tbl_ViewJobVacancy" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewLeaveBalanceReport" EntityType="Self.tbl_ViewLeaveBalanceReport" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewLeaveEntitlements" EntityType="Self.tbl_ViewLeaveEntitlements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewLeaveNotifications" EntityType="Self.tbl_ViewLeaveNotifications" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewPackageList" EntityType="Self.tbl_ViewPackageList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewProjects" EntityType="Self.tbl_ViewProjects" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewSessionList" EntityType="Self.tbl_ViewSessionList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_ViewTimesheetCsvExtract" EntityType="Self.tbl_ViewTimesheetCsvExtract" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DatabaseModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="ERPEntities" annotation:LazyLoadingEnabled="true">
+          <FunctionImport Name="prc_acm_common_sel_con">
+            <Parameter Name="selecttype" Mode="In" Type="String" />
+            <Parameter Name="fieldname" Mode="In" Type="String" />
+            <Parameter Name="tablename" Mode="In" Type="String" />
+            <Parameter Name="columnname" Mode="In" Type="String" />
+            <Parameter Name="columnnameV" Mode="In" Type="String" />
+            <Parameter Name="orderbyfieldname" Mode="In" Type="String" />
+            <Parameter Name="columnname2" Mode="In" Type="String" />
+            <Parameter Name="columnnameV2" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prc_acm_common_update">
+            <Parameter Name="TenantId" Mode="In" Type="Int32" />
+            <Parameter Name="TableName" Mode="In" Type="String" />
+            <Parameter Name="SetFieldName" Mode="In" Type="String" />
+            <Parameter Name="SetFieldValue" Mode="In" Type="String" />
+            <Parameter Name="WhereFieldName" Mode="In" Type="String" />
+            <Parameter Name="WhereFieldValue" Mode="In" Type="Decimal" />
+            <Parameter Name="mode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prc_acm_menudisplay_sel" ReturnType="Collection(DatabaseModel.prc_acm_menudisplay_sel_Result)">
+            <Parameter Name="TENANT_ID" Mode="In" Type="Int64" />
+            <Parameter Name="LId" Mode="In" Type="String" />
+            <Parameter Name="Password" Mode="In" Type="String" />
+            <Parameter Name="sqlquery" Mode="In" Type="String" />
+            <Parameter Name="mode" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="prc_getAllTable_ActF_OdrWise">
+            <Parameter Name="TenantId" Mode="In" Type="Int32" />
+            <Parameter Name="fieldname" Mode="In" Type="String" />
+            <Parameter Name="tablename" Mode="In" Type="String" />
+            <Parameter Name="orderbyfieldname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_alterdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_creatediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="version" Mode="In" Type="Int32" />
+            <Parameter Name="definition" Mode="In" Type="Binary" />
+          </FunctionImport>
+          <FunctionImport Name="sp_dropdiagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(DatabaseModel.sp_helpdiagramdefinition_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(DatabaseModel.sp_helpdiagrams_Result)">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="sp_renamediagram">
+            <Parameter Name="diagramname" Mode="In" Type="String" />
+            <Parameter Name="owner_id" Mode="In" Type="Int32" />
+            <Parameter Name="new_diagramname" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="sp_upgraddiagrams" />
+          <EntitySet Name="tbl_AddCustomer" EntityType="DatabaseModel.tbl_AddCustomer" />
+          <EntitySet Name="tbl_AddLeaveEntitlement" EntityType="DatabaseModel.tbl_AddLeaveEntitlement" />
+          <EntitySet Name="tbl_AddPerformanceTracker" EntityType="DatabaseModel.tbl_AddPerformanceTracker" />
+          <EntitySet Name="tbl_AssignLeave" EntityType="DatabaseModel.tbl_AssignLeave" />
+          <EntitySet Name="tbl_AttendanceFileUpload" EntityType="DatabaseModel.tbl_AttendanceFileUpload" />
+          <EntitySet Name="tbl_Configure" EntityType="DatabaseModel.tbl_Configure" />
+          <EntitySet Name="tbl_ContactDetails" EntityType="DatabaseModel.tbl_ContactDetails" />
+          <EntitySet Name="tbl_DefineJobApplicationHeaderAndFooter" EntityType="DatabaseModel.tbl_DefineJobApplicationHeaderAndFooter" />
+          <EntitySet Name="tbl_DefineLeavePeriod" EntityType="DatabaseModel.tbl_DefineLeavePeriod" />
+          <EntitySet Name="tbl_DefineWorkWeek" EntityType="DatabaseModel.tbl_DefineWorkWeek" />
+          <EntitySet Name="tbl_Dependents" EntityType="DatabaseModel.tbl_Dependents" />
+          <EntitySet Name="tbl_DirectDeposit" EntityType="DatabaseModel.tbl_DirectDeposit" />
+          <EntitySet Name="tbl_DisplayAttendanceSummaryReportCriteria" EntityType="DatabaseModel.tbl_DisplayAttendanceSummaryReportCriteria" />
+          <EntitySet Name="tbl_DisplayEmployeeReportCriteria" EntityType="DatabaseModel.tbl_DisplayEmployeeReportCriteria" />
+          <EntitySet Name="tbl_DisplayProjectReportCriteria" EntityType="DatabaseModel.tbl_DisplayProjectReportCriteria" />
+          <EntitySet Name="tbl_EmergencyContacts" EntityType="DatabaseModel.tbl_EmergencyContacts" />
+          <EntitySet Name="tbl_Immigration" EntityType="DatabaseModel.tbl_Immigration" />
+          <EntitySet Name="tbl_JobHistory" EntityType="DatabaseModel.tbl_JobHistory" />
+          <EntitySet Name="tbl_LeaveList" EntityType="DatabaseModel.tbl_LeaveList" />
+          <EntitySet Name="tbl_ListDefineKpi" EntityType="DatabaseModel.tbl_ListDefineKpi" />
+          <EntitySet Name="tbl_Membgerships" EntityType="DatabaseModel.tbl_Membgerships" />
+          <EntitySet Name="tbl_PersonalDetails" EntityType="DatabaseModel.tbl_PersonalDetails" />
+          <EntitySet Name="tbl_Qualifications" EntityType="DatabaseModel.tbl_Qualifications" />
+          <EntitySet Name="tbl_ReportTo" EntityType="DatabaseModel.tbl_ReportTo" />
+          <EntitySet Name="tbl_SalaryHistory" EntityType="DatabaseModel.tbl_SalaryHistory" />
+          <EntitySet Name="tbl_SaveAppraisalHeader" EntityType="DatabaseModel.tbl_SaveAppraisalHeader" />
+          <EntitySet Name="tbl_SearchKpiGroup360" EntityType="DatabaseModel.tbl_SearchKpiGroup360" />
+          <EntitySet Name="tbl_SearchPerformancReview360" EntityType="DatabaseModel.tbl_SearchPerformancReview360" />
+          <EntitySet Name="tbl_ShowLeaveCalendar" EntityType="DatabaseModel.tbl_ShowLeaveCalendar" />
+          <EntitySet Name="tbl_ViewAttendanceDataExtract" EntityType="DatabaseModel.tbl_ViewAttendanceDataExtract" />
+          <EntitySet Name="tbl_ViewAttendanceRecord" EntityType="DatabaseModel.tbl_ViewAttendanceRecord" />
+          <EntitySet Name="tbl_ViewCandidates" EntityType="DatabaseModel.tbl_ViewCandidates" />
+          <EntitySet Name="tbl_ViewEmployee" EntityType="DatabaseModel.tbl_ViewEmployee" />
+          <EntitySet Name="tbl_ViewEmployeeTimesheet" EntityType="DatabaseModel.tbl_ViewEmployeeTimesheet" />
+          <EntitySet Name="tbl_ViewHolidayList" EntityType="DatabaseModel.tbl_ViewHolidayList" />
+          <EntitySet Name="tbl_ViewJobApplicationQuestionList" EntityType="DatabaseModel.tbl_ViewJobApplicationQuestionList" />
+          <EntitySet Name="tbl_ViewJobVacancy" EntityType="DatabaseModel.tbl_ViewJobVacancy" />
+          <EntitySet Name="tbl_ViewLeaveBalanceReport" EntityType="DatabaseModel.tbl_ViewLeaveBalanceReport" />
+          <EntitySet Name="tbl_ViewLeaveEntitlements" EntityType="DatabaseModel.tbl_ViewLeaveEntitlements" />
+          <EntitySet Name="tbl_ViewLeaveNotifications" EntityType="DatabaseModel.tbl_ViewLeaveNotifications" />
+          <EntitySet Name="tbl_ViewPackageList" EntityType="DatabaseModel.tbl_ViewPackageList" />
+          <EntitySet Name="tbl_ViewProjects" EntityType="DatabaseModel.tbl_ViewProjects" />
+          <EntitySet Name="tbl_ViewSessionList" EntityType="DatabaseModel.tbl_ViewSessionList" />
+          <EntitySet Name="tbl_ViewTimesheetCsvExtract" EntityType="DatabaseModel.tbl_ViewTimesheetCsvExtract" />
+          </EntityContainer>
+        <ComplexType Name="prc_acm_menudisplay_sel_Result">
+          <Property Type="Int32" Name="USER_ID" Nullable="false" />
+          <Property Type="String" Name="FIRST_NAME" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="LAST_NAME" Nullable="true" MaxLength="50" />
+          <Property Type="Int64" Name="TENANT_ID" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagramdefinition_Result">
+          <Property Type="Int32" Name="version" Nullable="true" />
+          <Property Type="Binary" Name="definition" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_helpdiagrams_Result">
+          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+          <Property Type="Int32" Name="ID" Nullable="false" />
+          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+          <Property Type="Int32" Name="OwnerID" Nullable="false" />
+        </ComplexType>
+        <EntityType Name="tbl_AddCustomer">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_AddLeaveEntitlement">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LeaveType" Type="Int32" />
+          <Property Name="MuEmployee" Type="Boolean" />
+          <Property Name="LeavePeriod" Type="Boolean" />
+          <Property Name="Entitlement" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CeaatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_AddPerformanceTracker">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TrackerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_AssignLeave">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LeaveType" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_AttendanceFileUpload">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AttendanceFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Configure">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PunchingInOut" Type="Boolean" />
+          <Property Name="AttendanceRecords" Type="Boolean" />
+          <Property Name="Subordinates" Type="Boolean" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ContactDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AddressStree1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressStreet2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="Int32" />
+          <Property Name="Country" Type="Int32" />
+          <Property Name="HomeTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkMail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DefineJobApplicationHeaderAndFooter">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Header" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Footer" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DefineLeavePeriod">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StartMonth" Type="Int32" />
+          <Property Name="StartDate" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DefineWorkWeek">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Country" Type="Int32" />
+          <Property Name="Monday" Type="Int32" />
+          <Property Name="Tuesday" Type="Int32" />
+          <Property Name="Wendnesday" Type="Int32" />
+          <Property Name="Thursday" Type="Int32" />
+          <Property Name="Friday" Type="Int32" />
+          <Property Name="Saturday" Type="Int32" />
+          <Property Name="Sunday" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Dependents">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="RelationShip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DirectDeposit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Amount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FinancialInstitute" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AccountType" Type="Int32" />
+          <Property Name="BranchLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RountingNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Int32" />
+          <Property Name="Activated" Type="Int32" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DisplayAttendanceSummaryReportCriteria">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobTitle" Type="Int32" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="EmployeeStatus" Type="Int32" />
+          <Property Name="From" Type="DateTime" Precision="0" />
+          <Property Name="To" Type="DateTime" Precision="0" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DisplayEmployeeReportCriteria">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectName" Type="Int32" />
+          <Property Name="ActivityName" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_DisplayProjectReportCriteria">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProjectName" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="TimeSheet" Type="Boolean" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_EmergencyContacts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="RelationShip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HomeTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Immigration">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Document" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Passport" Type="Boolean" />
+          <Property Name="Visa" Type="Boolean" />
+          <Property Name="Number" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EligibleStatus" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Issueddate" Type="DateTime" Precision="3" />
+          <Property Name="IssuedBy" Type="DateTime" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="0" />
+          <Property Name="Cooment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_JobHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Job" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JoinDate" Type="DateTime" Precision="3" />
+          <Property Name="ProbationEndDate" Type="DateTime" Precision="3" />
+          <Property Name="DateOfPermanency" Type="DateTime" Precision="3" />
+          <Property Name="JobTitle" Type="Int32" />
+          <Property Name="EmploymentStatus" Type="Int32" />
+          <Property Name="JobCategory" Type="Int32" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_LeaveList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="Rejected" Type="Boolean" />
+          <Property Name="PendingApproval" Type="Boolean" />
+          <Property Name="Scheduled" Type="Boolean" />
+          <Property Name="Taken" Type="Boolean" />
+          <Property Name="Employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="PastEmployee" Type="Boolean" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ListDefineKpi">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="Int32" />
+          <Property Name="Department" Type="Int32" />
+          <Property Name="Indicator" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KIPGroup" Type="Int32" />
+          <Property Name="MinimumRating" Type="Int32" />
+          <Property Name="MaximumRating" Type="Int32" />
+          <Property Name="DefualtScal" Type="Boolean" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Membgerships">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Membership" Type="Int32" />
+          <Property Name="Currency" Type="Int32" />
+          <Property Name="SubscriptionPaidBy" Type="Int32" />
+          <Property Name="SubscriptionDate" Type="DateTime" Precision="3" />
+          <Property Name="SubscriptionAmount" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubsriptionRenewalDate" Type="DateTime" Precision="3" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_PersonalDetails">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddilName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EmployeeID" Type="Int32" />
+          <Property Name="OtherId" Type="Int32" />
+          <Property Name="LicenceNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="Male" Type="Boolean" />
+          <Property Name="Female" Type="Boolean" />
+          <Property Name="MaritalStatus" Type="Int32" />
+          <Property Name="Nationality" Type="Int32" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_Qualifications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Todate" Type="DateTime" Precision="3" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GPAScore" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Institute" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="MajorSpecialization" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="EndDate" Type="DateTime" Precision="3" />
+          <Property Name="Year" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Skill" Type="Int32" />
+          <Property Name="YearOfExperiance" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Language" Type="Int32" />
+          <Property Name="Competency" Type="Int32" />
+          <Property Name="Fluency" Type="Int32" />
+          <Property Name="Comment2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LicenseType" Type="Int32" />
+          <Property Name="LicenseNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IssuedDate" Type="DateTime" Precision="3" />
+          <Property Name="ExpiryDate" Type="DateTime" Precision="3" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment3" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ReportTo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ReportingMethod" Type="Int32" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_SalaryHistory">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PayGrade" Type="Int32" />
+          <Property Name="Currency" Type="Int32" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AnnualBasicPayment" Type="Boolean" />
+          <Property Name="CarAllowance" Type="Boolean" />
+          <Property Name="CostOfLivingAllowance" Type="Boolean" />
+          <Property Name="EffectiveDate" Type="DateTime" Precision="3" />
+          <Property Name="EffectiveDate1" Type="DateTime" Precision="3" />
+          <Property Name="EffectiveDate2" Type="DateTime" Precision="3" />
+          <Property Name="PentionFund" Type="Boolean" />
+          <Property Name="EPF" Type="Boolean" />
+          <Property Name="EffectiveDate3" Type="DateTime" Precision="3" />
+          <Property Name="EffectiveDate4" Type="DateTime" Precision="3" />
+          <Property Name="SelectFile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_SaveAppraisalHeader">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AppraisalDetail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_SearchKpiGroup360">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Weightage" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_SearchPerformancReview360">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StartDate" Type="DateTime" Precision="0" />
+          <Property Name="EndDate" Type="DateTime" Precision="0" />
+          <Property Name="DueDate" Type="DateTime" Precision="0" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ShowLeaveCalendar">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="Year" Type="Int32" />
+          <Property Name="Month" Type="Int32" />
+          <Property Name="EmploymentStatus" Type="Int32" />
+          <Property Name="PastEmployee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewAttendanceDataExtract">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="ReportType" Type="Int32" />
+          <Property Name="ReportType1" Type="Int32" />
+          <Property Name="FromDate" Type="DateTime" Precision="0" />
+          <Property Name="ToDate" Type="DateTime" Precision="0" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewAttendanceRecord">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewCandidates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MiddleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressStreet1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="AddressStreet2" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="City" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StatusProvince" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Zip" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Country" Type="Int32" />
+          <Property Name="HomeTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mobile" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="WorkTelephone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobVacancy" Type="Int32" />
+          <Property Name="Resume" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KeyWord" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Comment" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DateOfApplication" Type="DateTime" Precision="3" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewEmployee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LocalForeign" Type="Int32" />
+          <Property Name="Customer" Type="Int32" />
+          <Property Name="BatchNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Reference" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CRMActivity" Type="Int32" />
+          <Property Name="DateOfTransaction" Type="DateTime" Precision="3" />
+          <Property Name="Currency" Type="Int32" />
+          <Property Name="ProjectNo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Notes" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewEmployeeTimesheet">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Acticated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewHolidayList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="Country" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewJobApplicationQuestionList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobVacancy" Type="Int32" />
+          <Property Name="QuestionGroup" Type="Int32" />
+          <Property Name="QuestionType" Type="Int32" />
+          <Property Name="QuestionName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewJobVacancy">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VacancyName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="HiringManager" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="NumberOfPosition" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewLeaveBalanceReport">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Generate" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewLeaveEntitlements">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LeaveType" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewLeaveNotifications">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NoName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SendOn" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="LeaveNext" Type="Int32" />
+          <Property Name="MailSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="JobTitle" Type="Int32" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="Location" Type="Int32" />
+          <Property Name="JobTitle1" Type="Int32" />
+          <Property Name="SubUnit1" Type="Int32" />
+          <Property Name="Location1" Type="Int32" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewPackageList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Code" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Company" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Cost" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewProjects">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="ProjectAdmin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewSessionList">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Course" Type="Int32" />
+          <Property Name="ScheduledDate" Type="DateTime" Precision="3" />
+          <Property Name="DueDate" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryMethod" Type="Int32" />
+          <Property Name="DeliveryLocation" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="tbl_ViewTimesheetCsvExtract">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Supervior" Type="Int32" />
+          <Property Name="EmploymentStatus" Type="Int32" />
+          <Property Name="SubUnit" Type="Int32" />
+          <Property Name="Customer" Type="Int32" />
+          <Property Name="Project" Type="Int32" />
+          <Property Name="Activity" Type="Int32" />
+          <Property Name="StartDate" Type="DateTime" Precision="3" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="Saved" Type="Boolean" />
+          <Property Name="Submitted" Type="Boolean" />
+          <Property Name="Approved" Type="Boolean" />
+          <Property Name="Rejected" Type="Boolean" />
+          <Property Name="NotNull" Type="Boolean" />
+          <Property Name="JobTitle" Type="Boolean" />
+          <Property Name="Employment" Type="Boolean" />
+          <Property Name="JoinedDate" Type="Boolean" />
+          <Property Name="Location" Type="Boolean" />
+          <Property Name="Supervisor" Type="Boolean" />
+          <Property Name="CSV" Type="Boolean" />
+          <Property Name="Deleted" Type="Boolean" />
+          <Property Name="Activated" Type="Boolean" />
+          <Property Name="CreatedBy" Type="Int32" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DatabaseModelStoreContainer" CdmEntityContainer="ERPEntities">
+          <EntitySetMapping Name="tbl_AddCustomer">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_AddCustomer">
+              <MappingFragment StoreEntitySet="tbl_AddCustomer">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AddLeaveEntitlement">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_AddLeaveEntitlement">
+              <MappingFragment StoreEntitySet="tbl_AddLeaveEntitlement">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CeaatedBy" ColumnName="CeaatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Entitlement" ColumnName="Entitlement" />
+                <ScalarProperty Name="LeavePeriod" ColumnName="LeavePeriod" />
+                <ScalarProperty Name="MuEmployee" ColumnName="MuEmployee" />
+                <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AddPerformanceTracker">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_AddPerformanceTracker">
+              <MappingFragment StoreEntitySet="tbl_AddPerformanceTracker">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="TrackerName" ColumnName="TrackerName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AssignLeave">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_AssignLeave">
+              <MappingFragment StoreEntitySet="tbl_AssignLeave">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_AttendanceFileUpload">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_AttendanceFileUpload">
+              <MappingFragment StoreEntitySet="tbl_AttendanceFileUpload">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="AttendanceFile" ColumnName="AttendanceFile" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Configure">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_Configure">
+              <MappingFragment StoreEntitySet="tbl_Configure">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Subordinates" ColumnName="Subordinates" />
+                <ScalarProperty Name="AttendanceRecords" ColumnName="AttendanceRecords" />
+                <ScalarProperty Name="PunchingInOut" ColumnName="PunchingInOut" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ContactDetails">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ContactDetails">
+              <MappingFragment StoreEntitySet="tbl_ContactDetails">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="WorkMail" ColumnName="WorkMail" />
+                <ScalarProperty Name="WorkTelephone" ColumnName="WorkTelephone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="HomeTelephone" ColumnName="HomeTelephone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="StateProvince" ColumnName="StateProvince" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressStreet2" ColumnName="AddressStreet2" />
+                <ScalarProperty Name="AddressStree1" ColumnName="AddressStree1" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DefineJobApplicationHeaderAndFooter">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DefineJobApplicationHeaderAndFooter">
+              <MappingFragment StoreEntitySet="tbl_DefineJobApplicationHeaderAndFooter">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Footer" ColumnName="Footer" />
+                <ScalarProperty Name="Header" ColumnName="Header" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DefineLeavePeriod">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DefineLeavePeriod">
+              <MappingFragment StoreEntitySet="tbl_DefineLeavePeriod">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="StartMonth" ColumnName="StartMonth" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DefineWorkWeek">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DefineWorkWeek">
+              <MappingFragment StoreEntitySet="tbl_DefineWorkWeek">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Sunday" ColumnName="Sunday" />
+                <ScalarProperty Name="Saturday" ColumnName="Saturday" />
+                <ScalarProperty Name="Friday" ColumnName="Friday" />
+                <ScalarProperty Name="Thursday" ColumnName="Thursday" />
+                <ScalarProperty Name="Wendnesday" ColumnName="Wendnesday" />
+                <ScalarProperty Name="Tuesday" ColumnName="Tuesday" />
+                <ScalarProperty Name="Monday" ColumnName="Monday" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Dependents">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_Dependents">
+              <MappingFragment StoreEntitySet="tbl_Dependents">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DirectDeposit">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DirectDeposit">
+              <MappingFragment StoreEntitySet="tbl_DirectDeposit">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="RountingNo" ColumnName="RountingNo" />
+                <ScalarProperty Name="BranchLocation" ColumnName="BranchLocation" />
+                <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+                <ScalarProperty Name="FinancialInstitute" ColumnName="FinancialInstitute" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DisplayAttendanceSummaryReportCriteria">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DisplayAttendanceSummaryReportCriteria">
+              <MappingFragment StoreEntitySet="tbl_DisplayAttendanceSummaryReportCriteria">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="To" ColumnName="To" />
+                <ScalarProperty Name="From" ColumnName="From" />
+                <ScalarProperty Name="EmployeeStatus" ColumnName="EmployeeStatus" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DisplayEmployeeReportCriteria">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DisplayEmployeeReportCriteria">
+              <MappingFragment StoreEntitySet="tbl_DisplayEmployeeReportCriteria">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ActivityName" ColumnName="ActivityName" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_DisplayProjectReportCriteria">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_DisplayProjectReportCriteria">
+              <MappingFragment StoreEntitySet="tbl_DisplayProjectReportCriteria">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="TimeSheet" ColumnName="TimeSheet" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ProjectName" ColumnName="ProjectName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_EmergencyContacts">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_EmergencyContacts">
+              <MappingFragment StoreEntitySet="tbl_EmergencyContacts">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="WorkTelephone" ColumnName="WorkTelephone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="HomeTelephone" ColumnName="HomeTelephone" />
+                <ScalarProperty Name="RelationShip" ColumnName="RelationShip" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Immigration">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_Immigration">
+              <MappingFragment StoreEntitySet="tbl_Immigration">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Cooment" ColumnName="Cooment" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssuedBy" ColumnName="IssuedBy" />
+                <ScalarProperty Name="Issueddate" ColumnName="Issueddate" />
+                <ScalarProperty Name="EligibleStatus" ColumnName="EligibleStatus" />
+                <ScalarProperty Name="Number" ColumnName="Number" />
+                <ScalarProperty Name="Visa" ColumnName="Visa" />
+                <ScalarProperty Name="Passport" ColumnName="Passport" />
+                <ScalarProperty Name="Document" ColumnName="Document" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_JobHistory">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_JobHistory">
+              <MappingFragment StoreEntitySet="tbl_JobHistory">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="JobCategory" ColumnName="JobCategory" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="DateOfPermanency" ColumnName="DateOfPermanency" />
+                <ScalarProperty Name="ProbationEndDate" ColumnName="ProbationEndDate" />
+                <ScalarProperty Name="JoinDate" ColumnName="JoinDate" />
+                <ScalarProperty Name="Job" ColumnName="Job" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_LeaveList">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_LeaveList">
+              <MappingFragment StoreEntitySet="tbl_LeaveList">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="PastEmployee" ColumnName="PastEmployee" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="Taken" ColumnName="Taken" />
+                <ScalarProperty Name="Scheduled" ColumnName="Scheduled" />
+                <ScalarProperty Name="PendingApproval" ColumnName="PendingApproval" />
+                <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ListDefineKpi">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ListDefineKpi">
+              <MappingFragment StoreEntitySet="tbl_ListDefineKpi">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DefualtScal" ColumnName="DefualtScal" />
+                <ScalarProperty Name="MaximumRating" ColumnName="MaximumRating" />
+                <ScalarProperty Name="MinimumRating" ColumnName="MinimumRating" />
+                <ScalarProperty Name="KIPGroup" ColumnName="KIPGroup" />
+                <ScalarProperty Name="Indicator" ColumnName="Indicator" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Membgerships">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_Membgerships">
+              <MappingFragment StoreEntitySet="tbl_Membgerships">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="SubsriptionRenewalDate" ColumnName="SubsriptionRenewalDate" />
+                <ScalarProperty Name="SubscriptionAmount" ColumnName="SubscriptionAmount" />
+                <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
+                <ScalarProperty Name="SubscriptionPaidBy" ColumnName="SubscriptionPaidBy" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Membership" ColumnName="Membership" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_PersonalDetails">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_PersonalDetails">
+              <MappingFragment StoreEntitySet="tbl_PersonalDetails">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="MaritalStatus" ColumnName="MaritalStatus" />
+                <ScalarProperty Name="Female" ColumnName="Female" />
+                <ScalarProperty Name="Male" ColumnName="Male" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="LicenceNumber" ColumnName="LicenceNumber" />
+                <ScalarProperty Name="OtherId" ColumnName="OtherId" />
+                <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddilName" ColumnName="MiddilName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_Qualifications">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_Qualifications">
+              <MappingFragment StoreEntitySet="tbl_Qualifications">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment3" ColumnName="Comment3" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="IssuedDate" ColumnName="IssuedDate" />
+                <ScalarProperty Name="LicenseNumber" ColumnName="LicenseNumber" />
+                <ScalarProperty Name="LicenseType" ColumnName="LicenseType" />
+                <ScalarProperty Name="Comment2" ColumnName="Comment2" />
+                <ScalarProperty Name="Fluency" ColumnName="Fluency" />
+                <ScalarProperty Name="Competency" ColumnName="Competency" />
+                <ScalarProperty Name="Language" ColumnName="Language" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment1" />
+                <ScalarProperty Name="YearOfExperiance" ColumnName="YearOfExperiance" />
+                <ScalarProperty Name="Skill" ColumnName="Skill" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="MajorSpecialization" ColumnName="MajorSpecialization" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Institute" ColumnName="Institute" />
+                <ScalarProperty Name="GPAScore" ColumnName="GPAScore" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Todate" ColumnName="Todate" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ReportTo">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ReportTo">
+              <MappingFragment StoreEntitySet="tbl_ReportTo">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="ReportingMethod" ColumnName="ReportingMethod" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SalaryHistory">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_SalaryHistory">
+              <MappingFragment StoreEntitySet="tbl_SalaryHistory">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment1" />
+                <ScalarProperty Name="SelectFile" ColumnName="SelectFile" />
+                <ScalarProperty Name="EffectiveDate4" ColumnName="EffectiveDate4" />
+                <ScalarProperty Name="EffectiveDate3" ColumnName="EffectiveDate3" />
+                <ScalarProperty Name="EPF" ColumnName="EPF" />
+                <ScalarProperty Name="PentionFund" ColumnName="PentionFund" />
+                <ScalarProperty Name="EffectiveDate2" ColumnName="EffectiveDate2" />
+                <ScalarProperty Name="EffectiveDate1" ColumnName="EffectiveDate1" />
+                <ScalarProperty Name="EffectiveDate" ColumnName="EffectiveDate" />
+                <ScalarProperty Name="CostOfLivingAllowance" ColumnName="CostOfLivingAllowance" />
+                <ScalarProperty Name="CarAllowance" ColumnName="CarAllowance" />
+                <ScalarProperty Name="AnnualBasicPayment" ColumnName="AnnualBasicPayment" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="PayGrade" ColumnName="PayGrade" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SaveAppraisalHeader">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_SaveAppraisalHeader">
+              <MappingFragment StoreEntitySet="tbl_SaveAppraisalHeader">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="AppraisalDetail" ColumnName="AppraisalDetail" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SearchKpiGroup360">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_SearchKpiGroup360">
+              <MappingFragment StoreEntitySet="tbl_SearchKpiGroup360">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Weightage" ColumnName="Weightage" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_SearchPerformancReview360">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_SearchPerformancReview360">
+              <MappingFragment StoreEntitySet="tbl_SearchPerformancReview360">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ShowLeaveCalendar">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ShowLeaveCalendar">
+              <MappingFragment StoreEntitySet="tbl_ShowLeaveCalendar">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="PastEmployee" ColumnName="PastEmployee" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="Month" ColumnName="Month" />
+                <ScalarProperty Name="Year" ColumnName="Year" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewAttendanceDataExtract">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewAttendanceDataExtract">
+              <MappingFragment StoreEntitySet="tbl_ViewAttendanceDataExtract">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ReportType1" ColumnName="ReportType1" />
+                <ScalarProperty Name="ReportType" ColumnName="ReportType" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewAttendanceRecord">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewAttendanceRecord">
+              <MappingFragment StoreEntitySet="tbl_ViewAttendanceRecord">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewCandidates">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewCandidates">
+              <MappingFragment StoreEntitySet="tbl_ViewCandidates">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="DateOfApplication" ColumnName="DateOfApplication" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="KeyWord" ColumnName="KeyWord" />
+                <ScalarProperty Name="Resume" ColumnName="Resume" />
+                <ScalarProperty Name="JobVacancy" ColumnName="JobVacancy" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="WorkTelephone" ColumnName="WorkTelephone" />
+                <ScalarProperty Name="Mobile" ColumnName="Mobile" />
+                <ScalarProperty Name="HomeTelephone" ColumnName="HomeTelephone" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="Zip" ColumnName="Zip" />
+                <ScalarProperty Name="StatusProvince" ColumnName="StatusProvince" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="AddressStreet2" ColumnName="AddressStreet2" />
+                <ScalarProperty Name="AddressStreet1" ColumnName="AddressStreet1" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewEmployee">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewEmployee">
+              <MappingFragment StoreEntitySet="tbl_ViewEmployee">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="ProjectNo" ColumnName="ProjectNo" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="DateOfTransaction" ColumnName="DateOfTransaction" />
+                <ScalarProperty Name="CRMActivity" ColumnName="CRMActivity" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="BatchNo" ColumnName="BatchNo" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="LocalForeign" ColumnName="LocalForeign" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewEmployeeTimesheet">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewEmployeeTimesheet">
+              <MappingFragment StoreEntitySet="tbl_ViewEmployeeTimesheet">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Acticated" ColumnName="Acticated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewHolidayList">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewHolidayList">
+              <MappingFragment StoreEntitySet="tbl_ViewHolidayList">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewJobApplicationQuestionList">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewJobApplicationQuestionList">
+              <MappingFragment StoreEntitySet="tbl_ViewJobApplicationQuestionList">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="QuestionName" ColumnName="QuestionName" />
+                <ScalarProperty Name="QuestionType" ColumnName="QuestionType" />
+                <ScalarProperty Name="QuestionGroup" ColumnName="QuestionGroup" />
+                <ScalarProperty Name="JobVacancy" ColumnName="JobVacancy" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewJobVacancy">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewJobVacancy">
+              <MappingFragment StoreEntitySet="tbl_ViewJobVacancy">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="NumberOfPosition" ColumnName="NumberOfPosition" />
+                <ScalarProperty Name="HiringManager" ColumnName="HiringManager" />
+                <ScalarProperty Name="VacancyName" ColumnName="VacancyName" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewLeaveBalanceReport">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewLeaveBalanceReport">
+              <MappingFragment StoreEntitySet="tbl_ViewLeaveBalanceReport">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Generate" ColumnName="Generate" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewLeaveEntitlements">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewLeaveEntitlements">
+              <MappingFragment StoreEntitySet="tbl_ViewLeaveEntitlements">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="LeaveType" ColumnName="LeaveType" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewLeaveNotifications">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewLeaveNotifications">
+              <MappingFragment StoreEntitySet="tbl_ViewLeaveNotifications">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Location1" ColumnName="Location1" />
+                <ScalarProperty Name="SubUnit1" ColumnName="SubUnit1" />
+                <ScalarProperty Name="JobTitle1" ColumnName="JobTitle1" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="MailSubject" ColumnName="MailSubject" />
+                <ScalarProperty Name="LeaveNext" ColumnName="LeaveNext" />
+                <ScalarProperty Name="SendOn" ColumnName="SendOn" />
+                <ScalarProperty Name="NoName" ColumnName="NoName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewPackageList">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewPackageList">
+              <MappingFragment StoreEntitySet="tbl_ViewPackageList">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Cost" ColumnName="Cost" />
+                <ScalarProperty Name="Company" ColumnName="Company" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewProjects">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewProjects">
+              <MappingFragment StoreEntitySet="tbl_ViewProjects">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="ProjectAdmin" ColumnName="ProjectAdmin" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewSessionList">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewSessionList">
+              <MappingFragment StoreEntitySet="tbl_ViewSessionList">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="DeliveryLocation" ColumnName="DeliveryLocation" />
+                <ScalarProperty Name="DeliveryMethod" ColumnName="DeliveryMethod" />
+                <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+                <ScalarProperty Name="ScheduledDate" ColumnName="ScheduledDate" />
+                <ScalarProperty Name="Course" ColumnName="Course" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_ViewTimesheetCsvExtract">
+            <EntityTypeMapping TypeName="DatabaseModel.tbl_ViewTimesheetCsvExtract">
+              <MappingFragment StoreEntitySet="tbl_ViewTimesheetCsvExtract">
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Activated" ColumnName="Activated" />
+                <ScalarProperty Name="Deleted" ColumnName="Deleted" />
+                <ScalarProperty Name="CSV" ColumnName="CSV" />
+                <ScalarProperty Name="Supervisor" ColumnName="Supervisor" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="JoinedDate" ColumnName="JoinedDate" />
+                <ScalarProperty Name="Employment" ColumnName="Employment" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="NotNull" ColumnName="NotNull" />
+                <ScalarProperty Name="Rejected" ColumnName="Rejected" />
+                <ScalarProperty Name="Approved" ColumnName="Approved" />
+                <ScalarProperty Name="Submitted" ColumnName="Submitted" />
+                <ScalarProperty Name="Saved" ColumnName="Saved" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="Activity" ColumnName="Activity" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Customer" ColumnName="Customer" />
+                <ScalarProperty Name="SubUnit" ColumnName="SubUnit" />
+                <ScalarProperty Name="EmploymentStatus" ColumnName="EmploymentStatus" />
+                <ScalarProperty Name="Supervior" ColumnName="Supervior" />
+                <ScalarProperty Name="Employee" ColumnName="Employee" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="DatabaseModel" ZoomLevel="52">
+        <EntityTypeShape EntityType="DatabaseModel.tbl_AddCustomer" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_AddLeaveEntitlement" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_AddPerformanceTracker" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_AssignLeave" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_AttendanceFileUpload" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_Configure" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ContactDetails" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DefineJobApplicationHeaderAndFooter" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DefineLeavePeriod" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DefineWorkWeek" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_Dependents" Width="1.5" PointX="2.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DirectDeposit" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DisplayAttendanceSummaryReportCriteria" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DisplayEmployeeReportCriteria" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_DisplayProjectReportCriteria" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_EmergencyContacts" Width="1.5" PointX="4.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_Immigration" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_JobHistory" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_LeaveList" Width="1.5" PointX="12.75" PointY="6.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ListDefineKpi" Width="1.5" PointX="12.75" PointY="11.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_Membgerships" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_PersonalDetails" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_Qualifications" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ReportTo" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_SalaryHistory" Width="1.5" PointX="14.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_SaveAppraisalHeader" Width="1.5" PointX="14.75" PointY="10.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_SearchKpiGroup360" Width="1.5" PointX="14.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_SearchPerformancReview360" Width="1.5" PointX="2.75" PointY="15.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ShowLeaveCalendar" Width="1.5" PointX="16.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewAttendanceDataExtract" Width="1.5" PointX="16.75" PointY="5.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewAttendanceRecord" Width="1.5" PointX="16.75" PointY="9.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewCandidates" Width="1.5" PointX="10.75" PointY="16.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewEmployee" Width="1.5" PointX="16.75" PointY="13.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewEmployeeTimesheet" Width="1.5" PointX="12.75" PointY="17.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewHolidayList" Width="1.5" PointX="18.75" PointY="0.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewJobApplicationQuestionList" Width="1.5" PointX="18.75" PointY="4.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewJobVacancy" Width="1.5" PointX="18.75" PointY="8.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewLeaveBalanceReport" Width="1.5" PointX="18.75" PointY="12.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewLeaveEntitlements" Width="1.5" PointX="14.75" PointY="18.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewLeaveNotifications" Width="1.5" PointX="18.75" PointY="15.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewPackageList" Width="1.5" PointX="0.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewProjects" Width="1.5" PointX="2.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewSessionList" Width="1.5" PointX="4.75" PointY="19.75" />
+        <EntityTypeShape EntityType="DatabaseModel.tbl_ViewTimesheetCsvExtract" Width="1.5" PointX="20.75" PointY="0.75" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

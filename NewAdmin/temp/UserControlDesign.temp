@@ -1,0 +1,37 @@
+
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="[Titledd]PopUp.ascx.cs" Inherits="Website.Usercontrol.[Titledd]Popup" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="cc1" %>
+<%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="ACT" %>
+<asp:LinkButton ID="Link[Titledd]" runat="server"><i class="icon-plus-sign"></i></asp:LinkButton>
+
+    <asp:Panel ID="Pnl[Titledd]" runat="server" CssClass="scrollable123" style="position: fixed; z-index: 100001; display: none;" >
+        <div class="widgetbox">
+           <h4 class="widgettitle" style="background: none repeat scroll 0 0 #0866c6;color:White;color:White;">
+                Add[Titledd]
+                </h4>
+            <div class="widgetcontent ">
+                <div class="row-fluid">
+				[PageContentuc11]
+
+				<p class="stdformbutton">
+               
+                       <asp:Button ID="btnsubmit" runat="server" Text="submit"  OnClick="btnSave_Click" class="btn btn-primary" ValidationGroup="submit"/>
+					     <asp:Button ID="btnClose" runat="server" Text="Cancel" class="btn btn-primary" />
+					   </p>
+				</div>
+             </div>
+           </div>
+		   
+		    </asp:Panel>
+
+<cc1:ModalPopupExtender ID="ModalPopupExtender2" runat="server" DynamicServicePath="" 
+    BackgroundCssClass="modalBackground" CancelControlID="btnClose" Enabled="True"
+    PopupControlID="Pnl[Titledd]" TargetControlID="Link[Titledd]">
+</cc1:ModalPopupExtender>
+				
+
+
+
+
+			
+

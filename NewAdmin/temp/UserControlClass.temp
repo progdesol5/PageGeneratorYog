@@ -1,0 +1,73 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Linq;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Database;
+namespace DMS.Usercontrol
+{
+public partial class [Titledd]Popup : System.Web.UI.UserControl
+{
+    ERPEntities DB = new ERPEntities();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+	 if (!IsPostBack)
+        {
+			 BindData();
+        }
+    }
+	public void BindData()
+    {
+	 [ServerContentSenddd]
+	}
+
+	
+	protected void btnSave_Click(object sender, EventArgs e)
+    {
+        if (Request.QueryString.Count > 0)
+        {
+            int ID = Convert.ToInt32(Request.QueryString["ID"]);
+            Database.tbl_[Titledd] objtbl_[Titledd] = DB.tbl_[Titledd].Single(p => p.ID == ID);
+            [ServerContentSenduc] 
+        }
+        else
+        {
+            Database.tbl_[Titledd] objtbl_[Titledd] = new Database.tbl_[Titledd]();
+   //Server Content Send data Yogesh
+            [ServerContentSenduc]
+            objtbl_[Titledd].Active = true; 
+            objtbl_[Titledd].DateCreated = DateTime.Now;
+            objtbl_[Titledd].Deleted = true;
+            DB.tbl_[Titledd].AddObject(objtbl_[Titledd]);
+        }
+        DB.SaveChanges();
+		//((AdminMaster)this.Page.Master).BindListFromPopup(((ContentPlaceHolder)this.Parent), Database.Common.PopupOP.[Titledd].ToString(), "drp[Titledd]ID"); 
+
+
+
+		 //if (OP == Database.common.PopupOP.[Titledd].ToString())
+        //{
+        //    DropDownList Drp = (DropDownList)Obj.FindControl(DropDownID);
+        //    Drp.DataSource = DB.tbl_[Titledd].Where(p => p.Deleted == true).OrderByDescending(p => p.ID);
+        //    Drp.DataBind();
+        //}
+
+       
+    }
+ 
+
+
+
+
+	 
+	
+	
+}
+}
+
+

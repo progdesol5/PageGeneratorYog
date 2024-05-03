@@ -1,0 +1,56 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Web;
+using System.Linq;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Web.UI.HtmlControls;
+using Database;
+namespace DMS
+{
+public partial class [TitleGridView]List : System.Web.UI.Page
+{
+    ERPEntities DB = new ERPEntities();
+    protected void Page_Load(object sender, EventArgs e)
+    {
+	 if (!IsPostBack)
+        {
+		 BindGrid();
+		
+        }
+    }
+	 public void BindGrid()
+        {
+            Listview1.DataSource = DB.tbl_[TitleGridView].Where(p => p.Deleted == true);
+            Listview1.DataBind();
+        }
+	protected void ListProduct_ItemCommand(object sender, ListViewCommandEventArgs e)
+        {
+            try
+            {
+                if (e.CommandName == "btnDelete")
+                {
+                    int ID = Convert.ToInt32(e.CommandArgument);
+                    Database.tbl_[TitleGridView] objtbl_[TitleGridView] = DB.tbl_[TitleGridView].Single(p => p.ID == ID);
+                    objtbl_[TitleGridView].Deleted = false;
+                    DataBind();
+                    DB.SaveChanges();
+                    Response.Redirect("[TitleGridView]List.aspx");
+
+                }
+                
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+		protected void addNew_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("[TitleGridView].aspx");
+        }
+}
+
+}
